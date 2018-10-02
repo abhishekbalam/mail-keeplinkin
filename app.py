@@ -13,7 +13,7 @@ app.config['MAIL_PASSWORD'] = os.environ['zoho_password2']
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 
-data={
+data1={
 	"links":{
 		"title":"Title",
 		"description":"Subtitle",
@@ -27,7 +27,7 @@ def main():
 
 @app.route('/sent/')	
 def sent():
-	return render_template('email.html', subject="fsdfs", data=data)	
+	return render_template('email.html', subject="fsdfs", data=data1)	
 
 def verify(email):
 	token="7996de2b-d743-4536-a107-5252fec5c828"
