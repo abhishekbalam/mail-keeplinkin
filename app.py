@@ -8,8 +8,8 @@ app = Flask(__name__)
 
 app.config['MAIL_SERVER']='smtp.zoho.com'
 app.config['MAIL_PORT'] = 465
-app.config['MAIL_USERNAME'] = os.environ['zoho_username']
-app.config['MAIL_PASSWORD'] = os.environ['zoho_password']
+app.config['MAIL_USERNAME'] = os.environ['zoho_username2']
+app.config['MAIL_PASSWORD'] = os.environ['zoho_password2']
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 
@@ -45,7 +45,7 @@ def send():
 		return render_template('error.html', text=text, again=True)
 
 	mail = Mail(app)
-	msg = Message('Confirm Your Email', sender = ('Abhishek Balam', 'newsletter@abhishekbalam.xyz'), recipients = [email])
+	msg = Message('Confirm Your Email', sender = ('Keeplink.in', 'mail@keeplink.in'), recipients = [email])
 	msg.html = render_template('confirm.html', name=subject, email=email) 
 	test=mail.send(msg)
 	
