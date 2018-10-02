@@ -27,7 +27,7 @@
 
                             <div style="line-height: 35px">
 
-                                Hey, <span style="color: #5caad2;">{% block name %}Abhishek{% endblock %}</span>
+                                Hey,<!--  <span style="color: #5caad2;">{% block name %}Abhishek{% endblock %}</span> -->
 
                             </div>
                         </td>
@@ -88,9 +88,7 @@
     {% block content %}
     {% endblock %}
     
-    {% with email=email %}
-        {% include 'layouts/footer.html' %}
-    {% endwith %}
+    {% include 'layouts/footer.html' %}
     
     
 </body>

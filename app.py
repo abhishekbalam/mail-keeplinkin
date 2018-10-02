@@ -13,13 +13,21 @@ app.config['MAIL_PASSWORD'] = os.environ['zoho_password2']
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 
+data={
+	"links":{
+		"title":"Title",
+		"description":"Subtitle",
+		"url":"https://mail.keeplink.in/"
+		}
+	}
+
 @app.route('/')	
 def main():
 	return render_template('index.html')
 
 @app.route('/sent/')	
 def sent():
-	return render_template('sent.html')	
+	return render_template('email.html', subject="fsdfs", data=data)	
 
 def verify(email):
 	token="7996de2b-d743-4536-a107-5252fec5c828"
@@ -45,8 +53,8 @@ def send():
 		return render_template('error.html', text=text, again=True)
 
 	mail = Mail(app)
-	msg = Message('Confirm Your Email', sender = ('Keeplink.in', 'mail@keeplink.in'), recipients = [email])
-	msg.html = render_template('confirm.html', name=subject, email=email) 
+	msg = Message(subject, sender = ('Keeplink.in', 'mail@keeplink.in'), recipients = [email])
+	msg.html = render_template('email.html', subject=subject, data=data) 
 	test=mail.send(msg)
 	
 	print(test)

@@ -1,20 +1,20 @@
 {% extends 'layouts/base.html' %}
-<!-- {% block name %}
+{% block name %}
 {{ name }}
 {% endblock %}
- -->
+
 
 {% block intro %}
-<!-- {{ data['intro']|safe }} -->
-hkjhkj
+Thanks for visiting <a href="https://mail.keeplink.in" style="color:#F4511E">mail.keeplink.in</a>. For future use, please make sure that this email is marked as NOT SPAM.<br><br>Here are your links with the following subject.<br>
+<br>
+<h3 style="text-align: center;">"{{ subject }}"</h3>
 {% endblock %}
 {% block content %}
 
-<!-- {% for post in data['posts'] %}
-    {% with post=post %}
+{% for link in data['links'] %}
+    {% with post=link %}
         {% include 'layouts/post-text.html' %}
     {% endwith %}
-{% endfor %} -->
-kjlkjlk
+{% endfor %}
 
 {% endblock %}
