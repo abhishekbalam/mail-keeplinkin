@@ -27,7 +27,8 @@ def main():
 
 @app.route('/sent/')	
 def sent():
-	return render_template('email.html', subject="fsdfs", data=data1)	
+	return render_template('sent.html')
+	# return render_template('email.html', subject="fsdfs", data=data1)	
 
 def verify(email):
 	token="7996de2b-d743-4536-a107-5252fec5c828"
@@ -42,19 +43,16 @@ def send():
 	
 	email=data['email'].strip()
 	subject=data['subject'].strip()
-	link=data['links'].strip()
+	links=data['links'].strip()
+	print(links)
 	
-	print(link)
-	
-	# abort(404)
-
 	if(verify(email)==False):
 		text="Invalid Email"
 		return render_template('error.html', text=text, again=True)
 
 	mail = Mail(app)
 	msg = Message(subject, sender = ('Keeplink.in', 'mail@keeplink.in'), recipients = [email])
-	msg.html = render_template('email.html', subject=subject, data=data) 
+	msg.html = render_template('email.html', subject=subject, links=links) 
 	test=mail.send(msg)
 	
 	print(test)

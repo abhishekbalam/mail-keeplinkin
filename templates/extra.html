@@ -1,0 +1,5 @@
+{% for link in data['links'] %}
+    {% with post=link %}
+        {% include 'layouts/post-text.html' %}
+    {% endwith %}
+{% endfor %}

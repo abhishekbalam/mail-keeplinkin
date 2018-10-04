@@ -7,14 +7,12 @@
 {% block intro %}
 Thanks for visiting <a href="https://mail.keeplink.in" style="color:#F4511E">mail.keeplink.in</a>. For future use, please make sure that this email is marked as NOT SPAM.<br><br>Here are your links with the following subject.<br>
 <br>
+<hr>
 <h3 style="text-align: center;">"{{ subject }}"</h3>
 {% endblock %}
+<hr>
 {% block content %}
-
-{% for link in data['links'] %}
-    {% with post=link %}
-        {% include 'layouts/post-text.html' %}
-    {% endwith %}
-{% endfor %}
-
+<p>
+{{ links }}
+</p>
 {% endblock %}
