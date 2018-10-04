@@ -28,7 +28,7 @@ def main():
 @app.route('/sent/')	
 def sent():
 	# return render_template('sent.html')
-	links="ljdlkajsldkjalskdjlaksjdlkasd<br>dakshdksd<br>asldjkas"
+	links="ljdlkajsldkja<br>lskdjlaksjdlkasd<br>dakshdksd<br>asldjkas"
 	return render_template('email.html', subject="fsdfs", links=links)	
 
 def verify(email):
@@ -45,7 +45,7 @@ def send():
 	email=data['email'].strip()
 	subject=data['subject'].strip()
 	links=data['links'].strip()
-	print(links)
+	# print(links)
 	# links=links.replace('\n', '<br>')
 	arr=links.split('\n')
 	
@@ -54,7 +54,7 @@ def send():
 	for i in range(len(arr)):
 		links="<li>"+arr(i)+"</li>"
 	
-	links=links+"<ol>"
+	links=links+"\n<ol>"
 	
 	if(verify(email)==False):
 		text="Invalid Email"
