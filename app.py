@@ -52,7 +52,7 @@ def send():
 	links="<ol>\n"
 	
 	for i in range(len(arr)):
-		links=links + "<li>"+arr[i]+"</li>"
+		links=links + "<li><a href='"+arr[i]+"' target='_blank'>"+arr[i]+"</a></li>"
 	
 	links=links+"\n<ol>"
 	
