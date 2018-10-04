@@ -52,7 +52,7 @@ def send():
 	links="<ol>\n"
 	
 	for i in range(len(arr)):
-		links="<li>"+arr(i)+"</li>"
+		links="<li>"+arr[i]+"</li>"
 	
 	links=links+"\n<ol>"
 	
