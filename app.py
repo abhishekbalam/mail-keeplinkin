@@ -44,15 +44,15 @@ def send():
 	
 	email=data['email'].strip()
 	subject=data['subject'].strip()
-	links=data['links'].strip()
+	link=data['links'].strip()
 	# print(links)
 	# links=links.replace('\n', '<br>')
-	arr=links.split('\n')
+	arr=link.split('\n')
 	
 	links="<ol>\n"
 	
 	for i in range(len(arr)):
-		links="<li>"+arr[i]+"</li>"
+		links=links + "<li>"+arr[i]+"</li>"
 	
 	links=links+"\n<ol>"
 	

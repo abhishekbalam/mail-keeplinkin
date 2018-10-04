@@ -5,16 +5,17 @@
 
 
 {% block intro %}
-Thanks for visiting <a href="https://mail.keeplink.in" style="color:#F4511E">mail.keeplink.in</a>. For future use, please make sure that this email is marked as NOT SPAM.<br><br>Here are your links with the following subject.<br>
+Thanks for visiting <a href="https://mail.keeplink.in" style="color:#F4511E">mail.keeplink.in</a>. For future use, please make sure that this email is marked as NOT SPAM.
+<br>
+<br>
+Your links are given below...
+<br>
 <br>
 <hr>
-<h3 style="text-align: center;">"{{ subject }}"</h3>
 {% endblock %}
 <hr>
 {% block content %}
-<p>
 {% with links=links %}
     {% include 'layouts/post-body.html' %}
 {% endwith %}
-</p>
 {% endblock %}

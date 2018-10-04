@@ -1,6 +1,6 @@
 
     <!--  50% image -->
-    <table border="0" width="100%" cellpadding="0" cellspacing="0" bgcolor="ffffff">
+    <table border="0" width="100%" cellpadding="0" cellspacing="0" bgcolor="ffffff" style="margin-top: -3rem">
         <tr>
             <td align="center">
                 <table border="0" align="center" width="590" cellpadding="0" cellspacing="0" class="container590">
@@ -9,15 +9,13 @@
                         <td>
                             <table border="0" width="590" align="right" cellpadding="0" cellspacing="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;"
                                 class="container590">
-                                <!-- <tr>
+                                <tr>
                                     <td align="left" style="color: #3d3d3d; font-size: 22px; font-family: Quicksand, Calibri, sans-serif; font-weight:700;letter-spacing: 3px; line-height: 35px;"
                                         class="align-center main-header">
-
-
-                                        <div style="line-height: 35px">{{ post['title'] }}</div>
+                                            <div style="line-height: 35px;text-align: center;color:black">{{ subject }}</div>
                                     </td>
                                 </tr>
-                                 -->
+                                
                                 <tr>
                                     <td height="15" style="font-size: 12px; line-height: 12px;">&nbsp;</td>
                                 </tr>
@@ -45,7 +43,7 @@
                                 <tr>
                                     <td align="left" style=" font-size: 16px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 24px;"
                                         class="align-center">
-                                        <div style="line-height: 24px">{{ links }}</div>
+                                        <div style="line-height: 24px">{{ links|safe }}</div>
                                     </td>
                                 </tr>
 
