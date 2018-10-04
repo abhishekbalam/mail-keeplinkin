@@ -13,6 +13,8 @@ Thanks for visiting <a href="https://mail.keeplink.in" style="color:#F4511E">mai
 <hr>
 {% block content %}
 <p>
-{{ links }}
+{% with links=links %}
+    {% include 'layouts/post-body.html' %}
+{% endwith %}
 </p>
 {% endblock %}

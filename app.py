@@ -27,8 +27,8 @@ def main():
 
 @app.route('/sent/')	
 def sent():
-	return render_template('sent.html')
-	# return render_template('email.html', subject="fsdfs", data=data1)	
+	# return render_template('sent.html')
+	return render_template('email.html', subject="fsdfs", links=links)	
 
 def verify(email):
 	token="7996de2b-d743-4536-a107-5252fec5c828"
