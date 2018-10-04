@@ -4,14 +4,14 @@
   
     <title>Mail Your Links</title>
     <meta charset="UTF-8">
-    <meta name="description" content="A simple no-fuss tool to email yourself links which you found interesting on the web.">
+    <meta name="description" content="A simple no-fuss tool to email yourself links which you find interesting on the web.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#F4511E">
 
     <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="image/x-icon">
     <link rel="icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="image/x-icon">
 
-    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/mail.css')}}">
     
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
@@ -60,7 +60,7 @@
                 <input type="subject" class="form-control" placeholder="Subject for the email." name="subject" required="">
               </div>
               <div class="form-group">
-                <label for="links">Links:</label>
+                <label for="links">Links: <span style="color: #4c555d"> (One link on each line please...)</span></label>
                 <textarea class="form-control" name="links" rows="5" placeholder="Your links here." required=""></textarea>
               </div>
               <!-- <br>
