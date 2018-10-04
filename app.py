@@ -66,7 +66,7 @@ def send():
 	test=mail.send(msg)
 	
 	print(test)
-	return redirect("/sent/", code=302)
+	return redirect("/sent/"+email, code=302)
 
 if __name__ == '__main__':
 	app.jinja_env.auto_reload = True
