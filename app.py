@@ -25,9 +25,9 @@ data1={
 def main():
 	return render_template('index.html')
 
-@app.route('/sent/')	
-def sent():
-	return render_template('sent.html')
+@app.route('/sent/<email>')	
+def sent(email):
+	return render_template('sent.html', email=email)
 	# links="ljdlkajsldkja<br>lskdjlaksjdlkasd<br>dakshdksd<br>asldjkas"
 	# return render_template('email.html', subject="fsdfs", links=links)	
 
