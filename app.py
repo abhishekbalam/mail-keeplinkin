@@ -2,7 +2,6 @@ import os
 from flask import Flask, render_template, request, redirect, jsonify, abort
 import requests
 from flask_mail import Mail, Message
-import db
 
 app = Flask(__name__)
 
@@ -13,14 +12,6 @@ app.config['MAIL_PASSWORD'] = os.environ['zoho_password2']
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 
-data1={
-	"links":{
-		"title":"Title",
-		"description":"Subtitle",
-		"url":"https://mail.keeplink.in/"
-		}
-	}
-
 @app.route('/')	
 def main():
 	return render_template('index.html')
@@ -28,8 +19,6 @@ def main():
 @app.route('/sent/<email>')	
 def sent(email):
 	return render_template('sent.html', email=email)
-	# links="ljdlkajsldkja<br>lskdjlaksjdlkasd<br>dakshdksd<br>asldjkas"
-	# return render_template('email.html', subject="fsdfs", links=links)	
 
 def verify(email):
 	token="7996de2b-d743-4536-a107-5252fec5c828"
@@ -41,31 +30,23 @@ def verify(email):
 @app.route('/send', methods = ['POST'])	
 def send():
 	data=request.form
-	
 	email=data['email'].strip()
 	subject=data['subject'].strip()
 	link=data['links'].strip()
-	# print(links)
-	# links=links.replace('\n', '<br>')
 	arr=link.split('\n')
-	
 	links="<ol>\n"
-	
 	for i in range(len(arr)):
 		links=links + "<li><a href='"+arr[i]+"' target='_blank'>"+arr[i]+"</a></li>"
 	
 	links=links+"\n<ol>"
-	
 	if(verify(email)==False):
 		text="Invalid Email"
 		return render_template('error.html', text=text, again=True)
-
 	mail = Mail(app)
 	msg = Message(subject, sender = ('Keeplink.in', 'mail@keeplink.in'), recipients = [email])
 	msg.html = render_template('email.html', subject=subject, links=links) 
 	test=mail.send(msg)
-	
-	print(test)
+	# print(test)
 	return redirect("/sent/"+email, code=302)
 
 if __name__ == '__main__':
