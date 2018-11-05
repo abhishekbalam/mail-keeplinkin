@@ -14,12 +14,13 @@ body {
     transform: scale(0.95);
     transform-origin: 0 0;
   }
-  .logo{
-    padding-top: 20px;
+  .card-body{
+    margin-top: 50px;
   }
 }
 
 .logo a{
+  position: relative;
 	color: black;
 	text-decoration: none;
 }
