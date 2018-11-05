@@ -14,8 +14,8 @@ body {
     transform: scale(0.95);
     transform-origin: 0 0;
   }
-  .card-body{
-    margin-top: 70px;
+  .logo{
+    padding-top: 20px;
   }
 }
 
