@@ -4,3 +4,5 @@ A simple no-fuss tool to email yourself links which you found interesting on the
 
 Latest code at my selfhosted Gitea instance over at:
 - [https://git.abhishekbalam.xyz/apps/mail-keeplinkin](https://git.abhishekbalam.xyz/apps/mail-keeplinkin)
+
+It has added support for Docker etc.
